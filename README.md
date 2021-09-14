@@ -20,7 +20,7 @@ The pipeline for these analyses are summarized in the next files:
 
 a) Bash scripts:
 
-- [Qiime2_analysis](Bash/Qiime2_analysis) (1,2,3)
+- [Qiime2_analysis](Bash/QIIME2_analysis.md) (1,2,3)
 
 b) R scripts:
 
