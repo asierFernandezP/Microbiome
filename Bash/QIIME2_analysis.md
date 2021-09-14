@@ -28,7 +28,7 @@ conda activate qiime2-2020.2
 First, you have to create the samplesmanifest file with the location of the different FASTQ files.
 
 Next, you can import the FASTQ files with the following command:
-<br>
+
 ```
 qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]'  --input-path samplemanifest  --output-path paired-end-demux.qza  --input-format PairedEndFastqManifestPhred33V2
 ```
@@ -38,13 +38,13 @@ Files with extension "qza" are artefacts. We cannot visualize them. For this, we
 ```
 qiime demux summarize --i-data paired-end-demux.qza --o-visualization paired-end-demux.qzv
 ```
-
+<br>
 Next, you can visualize the quality of the reads and check if it is necessary to trim the sequences. For this you can use the following command or simply drop the qzv file in the browser (https://view.qiime2.org/):
 
 ```
 qiime tools view paired-end-demux.qzv
 ```
-
+<br>
 You can generate the metadata file. It is a tabulated text file, in which the first line indicates the different fields (name of sample, mouse models, treatment...). The first column (#SampleID) always corresponds to the sample name (same name used in the samplemanifest file).
 
 ### 2) ASV determination with DADA2
