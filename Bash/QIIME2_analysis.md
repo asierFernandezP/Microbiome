@@ -120,11 +120,7 @@ qiime phylogeny align-to-tree-mafft-fasttree \
  
 ```
 Once you have aligned the sequences and obtained the philogeny, the next step would be the taxonomic assignment of each ASV. For this, you need to perform several steps:
-
-```
-mkdir training-feature-classifiers
-cd training-feature-classifiers
-```
+<br> 
 
 **A)** Generation of the database for the taxonomy assignment. In this case, a recomenndable option would be the SILVA database 99%. For this, we can download the artifacts with the sequences (full-length) and the taxonomic assigments from [QIIME2 data resources](https://docs.qiime2.org/2020.8/data-resources/).
 
