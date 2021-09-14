@@ -20,8 +20,8 @@ First, we have to activate QIIME2:
 ```
 conda activate qiime2-2020.2
 ```
-
 <br> 
+
 ### 1) Data import and quality checking 
 
 First, you have to create the samplesmanifest file with the location of the different FASTQ files.
