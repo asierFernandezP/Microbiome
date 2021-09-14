@@ -54,7 +54,7 @@ This can be done in R following DADA2 pipeline (https://benjjneb.github.io/dada2
 qiime dada2 denoise-paired  --i-demultiplexed-seqs paired-end-demux.qza  --p-trim-left-f 0  --p-trunc-len-f 0  --p-trim-left-r 0  --p-trunc-len-r 0  --o-representative-sequences rep-seqs.qza  --o-table table.qza  --o-denoising-stats stats.qza  --p-n-threads 2  --p-n-reads-learn 1505813
 ```
 
-In this case, we indicate 0 as the position to trim (therefore, no trimming) both in the 5' and 3' of the forward and reverse reads. Finally, to train the error model we select the 25% of the total reads (1505813 in this case). 
+In this case, 0 is indicated as the position to trim (therefore, no trimming) both in the 5' and 3' of the forward and reverse reads. Finally, the 25% of the total reads are used to train the error model (1505813 in this case). 
 
 Now you can visualize the resulting artifacts:
 
@@ -90,7 +90,7 @@ qiime feature-table summarize \
  --o-visualization table_filt.qzv
  ```
 
-You may want to filter these ASVs also from the file containing the representative sequences and visualize it.
+You may want to filter these ASVs also from the file containing the representative sequences and visualize it:
 
 ```
 qiime feature-table filter-seqs --i-data rep-seqs.qza \
@@ -101,5 +101,7 @@ qiime feature-table tabulate-seqs \
  --i-data rep-seqs_filt.qza \
  --o-visualization rep-seqs_filt.qzv
 ```
+
+<br> 
 
 ### 3) Alignment of the representative sequences, building a phylogenetic tree and taxonomic assignment
