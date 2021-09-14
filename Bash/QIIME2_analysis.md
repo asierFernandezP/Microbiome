@@ -28,11 +28,11 @@ conda activate qiime2-2020.2
 First, you have to create the samplesmanifest file with the location of the different FASTQ files.
 
 Next, you can import the FASTQ files with the following command:
-
+<br>
 ```
 qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]'  --input-path samplemanifest  --output-path paired-end-demux.qza  --input-format PairedEndFastqManifestPhred33V2
 ```
-
+<br>
 Files with extension "qza" are artefacts. We cannot visualize them. For this, we use the following command to convert it into a visualization file ("qzv" extension):
 
 ```
