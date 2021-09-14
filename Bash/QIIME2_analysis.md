@@ -154,7 +154,7 @@ qiime feature-classifier classify-sklearn \
   --p-pre-dispatch 1 \
   --o-classification taxonomy.qza
   ```
-You can now visualize the taxonomy results:
+You can now visualize the results of the taxonomic assignment:
 
 ```
 qiime metadata tabulate \
