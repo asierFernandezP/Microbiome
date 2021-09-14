@@ -38,7 +38,7 @@ Files with extension "qza" are artefacts. We cannot visualize them. For this, we
 qiime demux summarize --i-data paired-end-demux.qza --o-visualization paired-end-demux.qzv
 ```
 
-Next, you can visualize the quality of the reads and check if it is necessary to trim the sequences. For this you can use the following command or simply drop the qzv file in the browser (https://view.qiime2.org/):
+Next, you can visualize the quality of the reads and check if it is necessary to trim the sequences. For this you can use the following command or simply drop the qzv file in the browser ([QIIME 2 View](https://view.qiime2.org/)):
 
 ```
 qiime tools view paired-end-demux.qzv
@@ -50,7 +50,7 @@ You can generate the metadata file. It is a tabulated text file, in which the fi
 
 ### 2) ASV determination with DADA2
 
-This can be done in R following [DADA2 pipeline] (https://benjjneb.github.io/dada2/tutorial.html), but QIIME2 offers also this analysis in a single command:
+This can be done in R following [DADA2 pipeline](https://benjjneb.github.io/dada2/tutorial.html), but QIIME2 offers also this analysis in a single command:
 
 ```
 qiime dada2 denoise-paired  --i-demultiplexed-seqs paired-end-demux.qza  --p-trim-left-f 0  --p-trunc-len-f 0  --p-trim-left-r 0  --p-trunc-len-r 0  --o-representative-sequences rep-seqs.qza  --o-table table.qza  --o-denoising-stats stats.qza  --p-n-threads 2  --p-n-reads-learn 1505813
