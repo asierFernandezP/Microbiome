@@ -29,6 +29,6 @@ b) R scripts:
 
 The project workflow is summarized in the [next figure]:
 
-![GitHub Logo](images/QIIME2_oveview.png)
+![GitHub Logo](images/QIIME2_overview.png)
 
 <sup>**Figure 1. Workflow of the 16S analysis pipeline.**  </sup>
