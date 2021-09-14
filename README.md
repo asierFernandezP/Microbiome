@@ -31,4 +31,4 @@ The project workflow is summarized in the [next figure]:
 
 ![GitHub Logo](images/Qiime2_oveview.png)
 
-<sup>**Figure 1. Workflow of the analysis**. Overview of the 16S analysis pipeline. </sup>
+<sup>**Figure 1. Workflow of the 16S analysis pipeline.**  </sup>
