@@ -56,7 +56,7 @@ This can be done in R following [DADA2 pipeline](https://benjjneb.github.io/dada
 qiime dada2 denoise-paired  --i-demultiplexed-seqs paired-end-demux.qza  --p-trim-left-f 0  --p-trunc-len-f 0  --p-trim-left-r 0  --p-trunc-len-r 0  --o-representative-sequences rep-seqs.qza  --o-table table.qza  --o-denoising-stats stats.qza  --p-n-threads 2  --p-n-reads-learn 1505813
 ```
 
-In this case, 0 is indicated as the position to trim (therefore, no trimming) both in the 5' and 3' of the forward and reverse reads. Finally, the 25% of the total reads are used to train the error model (1505813 in this case). 
+In this case, 0 is indicated as the position to trim (therefore, no trimming) both in the 5' and 3' of the forward and reverse reads. Finally, the 25% of the total reads are used to train the error model (1,505,813 in this case). 
 
 Now you can visualize the resulting artifacts:
 
@@ -75,7 +75,7 @@ qiime feature-table tabulate-seqs \
  --o-visualization rep-seqs.qzv
 ```
 
-After this step, you can remove singletons and ASVs with low frequency. For this, a good approach is to remove all ASVs with a lower frequency than 0.1% of the mean depth. The mean depth in this analysis is 103245 (as indicated when visualizing table.qzv). The 0.1% of this number is approximately 103. Then, you can use use the following command:
+After this step, you can remove singletons and ASVs with low frequency. For this, a good approach is to remove all ASVs with a lower frequency than 0.1% of the mean depth. The mean depth in this analysis is 103,245 (as indicated when visualizing table.qzv). The 0.1% of this number is approximately 103. Then, you can use use the following command:
 
 ```
 qiime feature-table filter-features --i-table table.qza \
@@ -107,3 +107,54 @@ qiime feature-table tabulate-seqs \
 <br> 
 
 ### 3) Alignment of the representative sequences, building a phylogenetic tree and taxonomic assignment
+
+You can now align the representative sequences using the MAFFT algorithm and use FastTree to build the phylogenetic tree:
+
+```
+qiime phylogeny align-to-tree-mafft-fasttree \
+ --i-sequences rep-seqs_filt.qza \
+ --o-alignment aligned-rep-seqs.qza \
+ --o-masked-alignment masked-aligned-rep-seqs.qza \
+ --o-tree unrooted-tree.qza \
+ --o-rooted-tree rooted-tree.qza
+ 
+```
+Once you have aligned the sequences and obtained the philogeny, the next step would be the taxonomic assignment of each ASV. For this, you need to perform several steps:
+
+```
+mkdir training-feature-classifiers
+cd training-feature-classifiers
+```
+
+A) Generation of the database for the taxonomy assignment. In this case, a recomenndable option would be the SILVA database 99%. For this, we can download the artifacts with the sequences (full-length) and the taxonomic assigments from [QIIME2 data resources](https://docs.qiime2.org/2020.8/data-resources/).
+
+B) Extract the reference reads: The primers here used are designed to amplify the 515-806 region of the 16S rRNA gene. There are already available and trained classifiers that can be downloded from [QIIME2 data resources](https://docs.qiime2.org/2020.8/data-resources/). However, in general, for 16S rRNA it is recommended to train you own classifier based on your specific sample preparation and sequencing parameters (including, for example, only the region of the target sequences that was sequenced):
+
+```
+qiime feature-classifier extract-reads \
+  --i-sequences silva-138-99-seqs.qza \
+  --p-f-primer GTGCCAGCMGCCGCGGTAA \
+  --p-r-primer GGACTACHVGGGTWTCTAAT \
+  --p-min-length 100 \
+  --p-max-length 400 \
+  --o-reads reference-seqs.qza
+```
+
+C) Training the classifier:  Now you need to train the Naive-Bayes classifier, associating the sequences for the database that have been trimmed with their taxonomy.
+
+```
+qiime feature-classifier fit-classifier-naive-bayes \
+  --i-reference-reads reference-seqs.qza \
+  --i-reference-taxonomy silva-138-99-tax.qza \
+  --o-classifier classifier.qza
+```
+
+D) Taxonomic assigment of the representative sequences of each ASV.
+
+```
+qiime feature-classifier classify-sklearn \
+  --i-classifier classifier.qza \ 
+  --i-reads rep-seqs_filt.qza \
+  --p-pre-dispatch 1 \
+  --o-classification taxonomy.qza
+  ```
