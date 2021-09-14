@@ -140,7 +140,7 @@ qiime feature-classifier extract-reads \
   --o-reads reference-seqs.qza
 ```
 
-**C)** Training the classifier:  Now you need to train the Naive-Bayes classifier, associating the sequences for the database that have been trimmed with their taxonomy.
+**C)** Training the classifier:  Now you need to train the Naive-Bayes classifier, associating the sequences for the database that have been trimmed with their taxonomy:
 
 ```
 qiime feature-classifier fit-classifier-naive-bayes \
@@ -149,7 +149,7 @@ qiime feature-classifier fit-classifier-naive-bayes \
   --o-classifier classifier.qza
 ```
 
-**D)** Taxonomic assigment of the representative sequences of each ASV.
+**D)** Taxonomic assigment of the representative sequences of each ASV:
 
 ```
 qiime feature-classifier classify-sklearn \
