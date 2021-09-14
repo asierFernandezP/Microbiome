@@ -13,14 +13,14 @@ We here describe the methods used to perform the next steps:
 2. ASV determination with DADA2.
 3. Alignment of the representative sequences, building a phylogenetic tree and taxonomic assignment.
 
-<br> 
+
 First, we have to activate QIIME2:
-<br> 
+
 
 ```
 conda activate qiime2-2020.2
 ```
-<br> 
+
 
 
 ### 1) Data import and quality checking 
