@@ -21,10 +21,10 @@ First, we have to activate QIIME2
 conda activate qiime2-2020.2
 ```
 
-### 1) Quality checking
+#### 1) Quality checking
 
 
-### 2) ASV determination with DADA2
+#### 2) ASV determination with DADA2
 
 
-### 3) Alignment of the representative sequences, building a phylogenetic tree and taxonomic assignment
+#### 3) Alignment of the representative sequences, building a phylogenetic tree and taxonomic assignment
