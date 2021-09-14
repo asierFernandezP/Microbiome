@@ -46,9 +46,11 @@ qiime tools view paired-end-demux.qzv
 
 You can generate the metadata file. It is a tabulated text file, in which the first line indicates the different fields (name of sample, mouse models, treatment...). The first column (#SampleID) always corresponds to the sample name (same name used in the samplemanifest file).
 
+<br>
+
 ### 2) ASV determination with DADA2
 
-This can be done in R following DADA2 pipeline (https://benjjneb.github.io/dada2/tutorial.html), but QIIME2 offers also this analysis in a single command:
+This can be done in R following [DADA2 pipeline] (https://benjjneb.github.io/dada2/tutorial.html), but QIIME2 offers also this analysis in a single command:
 
 ```
 qiime dada2 denoise-paired  --i-demultiplexed-seqs paired-end-demux.qza  --p-trim-left-f 0  --p-trunc-len-f 0  --p-trim-left-r 0  --p-trunc-len-r 0  --o-representative-sequences rep-seqs.qza  --o-table table.qza  --o-denoising-stats stats.qza  --p-n-threads 2  --p-n-reads-learn 1505813
