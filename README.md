@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This file summarizes the pipeline for the analysis of 16s rRNA Amplicon Sequencing Data starting with the fastq files that DO NOT have the barcodes and the primers sequences.
+This file summarizes the pipeline for the analysis of 16s rRNA Amplicon Sequencing Data starting with the FASTQ files with removed barcodes and primer sequences.
 
 ## Content
 
