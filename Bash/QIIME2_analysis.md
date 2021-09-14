@@ -14,7 +14,7 @@ We here describe the methods used to perform the next steps:
 3. Alignment of the representative sequences, building a phylogenetic tree and taxonomic assignment.
 <br> 
 
-First, we have to activate QIIME2:
+First, you need to activate QIIME2:
 
 
 ```
