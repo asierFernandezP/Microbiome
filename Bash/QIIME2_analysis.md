@@ -15,8 +15,8 @@ We here describe the methods used to perform the next steps:
 
 <br> 
 First, we have to activate QIIME2
-
 <br> 
+
 ```
 conda activate qiime2-2020.2
 ```
