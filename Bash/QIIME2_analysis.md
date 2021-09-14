@@ -154,3 +154,19 @@ qiime feature-classifier classify-sklearn \
   --p-pre-dispatch 1 \
   --o-classification taxonomy.qza
   ```
+You can now visualize the taxonomy results:
+
+```
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv
+```
+
+You can also generate a plot with the abundance of each ASV:
+
+```
+qiime taxa barplot --i-table table_filt.qza  \
+ --i-taxonomy taxonomy.qza \
+ --m-metadata-file  metadata.tsv \
+ --o-visualization taxa_barplot.qzv
+```
