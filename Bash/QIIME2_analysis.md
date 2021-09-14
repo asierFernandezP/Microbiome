@@ -122,9 +122,9 @@ qiime phylogeny align-to-tree-mafft-fasttree \
 Once you have aligned the sequences and obtained the philogeny, the next step would be the taxonomic assignment of each ASV. For this, you need to perform several steps:
 <br> 
 
-**A)** Generation of the database for the taxonomy assignment. In this case, a recomenndable option would be the SILVA database 99%. For this, we can download the artifacts with the sequences (full-length) and the taxonomic assigments from [QIIME2 data resources](https://docs.qiime2.org/2020.8/data-resources/).
+**A)** Generation of the database for the taxonomy assignment: in this case, a recomenndable option would be the SILVA database 99%. For this, we can download the artifacts with the sequences (full-length) and the taxonomic assigments from [QIIME2 data resources](https://docs.qiime2.org/2020.8/data-resources/).
 
-**B)** Extract the reference reads: The primers here used are designed to amplify the 515-806 region of the 16S rRNA gene. There are already available and trained classifiers that can be downloded from [QIIME2 data resources](https://docs.qiime2.org/2020.8/data-resources/). However, in general, for 16S rRNA it is recommended to train you own classifier based on your specific sample preparation and sequencing parameters (including, for example, only the region of the target sequences that was sequenced):
+**B)** Extract the reference reads: the primers here used are designed to amplify the 515-806 region of the 16S rRNA gene. There are already available and trained classifiers that can be downloded from [QIIME2 data resources](https://docs.qiime2.org/2020.8/data-resources/). However, in general, for 16S rRNA it is recommended to train you own classifier based on your specific sample preparation and sequencing parameters (including, for example, only the region of the target sequences that was sequenced):
 
 ```
 qiime feature-classifier extract-reads \
@@ -136,7 +136,7 @@ qiime feature-classifier extract-reads \
   --o-reads reference-seqs.qza
 ```
 
-**C)** Training the classifier:  Now you need to train the Naive-Bayes classifier, associating the sequences for the database that have been trimmed with their taxonomy:
+**C)** Training the classifier: now you need to train the Naive-Bayes classifier, associating the sequences for the database that have been trimmed with their taxonomy:
 
 ```
 qiime feature-classifier fit-classifier-naive-bayes \
