@@ -10,7 +10,7 @@ This file summarizes the pipeline for the analysis of 16s rRNA Amplicon Sequenci
 
 We here describe the methods used to perform the next steps: 
 
-1. Quality checking of the reads.
+1. Data import and quality checking of the reads.
 2. ASV determination with DADA2.
 3. Alignment of the representative sequences, building a phylogenetic tree and taxonomic assignment.
 4. Statistical analysis.
