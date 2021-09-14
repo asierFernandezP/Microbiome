@@ -12,8 +12,10 @@ We here describe the methods used to perform the next steps:
 1. Quality checking of the reads.
 2. ASV determination with DADA2.
 3. Alignment of the representative sequences, building a phylogenetic tree and taxonomic assignment.
+
 <br> 
-First, we have to activate QIIME2.
+First, we have to activate QIIME2
+
 ```
 conda activate qiime2-2020.2
 ```
