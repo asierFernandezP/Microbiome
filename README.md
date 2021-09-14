@@ -27,7 +27,7 @@ b) R scripts:
 - [Statistical analysis](R/Descriptive_data_analysis.R) (4)
  <br> <br> <br>
 
-The project workflow is summarized in the [next figure]:
+The project workflow is summarized in the next figure:
 
 ![GitHub Logo](images/QIIME2_overview.png)
 
