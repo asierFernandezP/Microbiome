@@ -15,6 +15,7 @@ We here describe the methods used to perform the next steps:
 3. Alignment of the representative sequences, building a phylogenetic tree and taxonomic assignment.
 4. Statistical analysis.
 
+`git status` 
 
 The pipeline for these analyses are summarized in the next files:
 
