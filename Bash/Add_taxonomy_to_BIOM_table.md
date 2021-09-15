@@ -19,7 +19,7 @@ cp taxonomy.tsv biom-taxonomy.tsv
 Change the first line of biom-taxonomy.tsv (i.e. the header) to the following one (separated by tab):
 
 ```
-#OTUID	taxonomy	confidence
+#OTUID  taxonomy  confidence
 ```
 
 Finally, yo need to add the taxonomy data to your .biom file and convert the .biom file to .tsv:
