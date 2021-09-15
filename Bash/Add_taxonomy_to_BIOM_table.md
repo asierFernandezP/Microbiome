@@ -1,3 +1,8 @@
+# Add taxonomy to BIOM table
+<br> 
+
+## Introduction
+
 In this file you can find the pipeline to generate a table with the abundance of each ASV in each sample and their taxonomy. For this we follow the steps summarized in [QIIME2 forum](https://forum.qiime2.org/t/exporting-and-modifying-biom-tables-e-g-adding-taxonomy-annotations/3630):
 
 
