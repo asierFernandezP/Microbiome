@@ -44,7 +44,7 @@ Next, you can visualize the quality of the reads and check if it is necessary to
 qiime tools view paired-end-demux.qzv
 ```
 
-You can generate the metadata file. It is a tabulated text file, in which the first line indicates the different fields (name of sample, mouse models, treatment...). The first column (#SampleID) always corresponds to the sample name (same name used in the samplemanifest file).
+You can generate the metadata file. It is a tabulated text file, in which the first row indicates the different fields (name of sample, mouse models, treatment...). The first column (#SampleID) always corresponds to the sample name (same name used in the samplemanifest file).
 
 <br>
 
