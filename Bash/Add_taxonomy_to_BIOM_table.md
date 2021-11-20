@@ -11,7 +11,6 @@ In this file you can find the pipeline to generate a table with the abundance of
 First, you need to export the BIOM table (feature table) and the taxonomy:
 
 ```
-mkdir export
 qiime tools export --input-path table_filt.qza --output-path exported
 qiime tools export --input-path taxonomy.qza --output-path exported
 ```
