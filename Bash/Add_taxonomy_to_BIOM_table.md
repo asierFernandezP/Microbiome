@@ -28,7 +28,7 @@ Change the first line of biom-taxonomy.tsv (i.e. the header) to the following on
 #OTUID  taxonomy  confidence
 ```
 
-Finally, yo need to add the taxonomy data to your .biom file and convert the .biom file to .tsv:
+Finally, you need to add the taxonomy data to your .biom file and convert the .biom file to .tsv:
 
 ```
 biom add-metadata -i feature-table.biom -o table-with-taxonomy.biom --observation-metadata-fp biom-taxonomy.tsv --sc-separated taxonomy
